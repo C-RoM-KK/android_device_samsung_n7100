@@ -5,11 +5,12 @@ TARGET_SCREEN_WIDTH := 720
 # Inherit device configuration
 $(call inherit-product, device/samsung/n7100/full_n7100.mk)
 
-# Inherit some common Slim stuff.
-$(call inherit-product, vendor/slim/config/common_full_phone.mk)
+# Inherit some common CRoM stuff.
+$(call inherit-product, vendor/crom/config/common_phone.mk)
 
-# Specify phone tech before including full_phone
-$(call inherit-product, vendor/slim/config/gsm.mk)
+# bootanimation
+PRODUCT_COPY_FILES += \
+    vendor/crom/prebuilt/common/media/xhdpi/BOOTANIMATION-1280x768.zip:system/media/bootanimation.zip
 
 PRODUCT_COPY_FILES +=  \
 #    device/samsung/n7100/69cpuinit:system/etc/init.d/69cpuinit
@@ -19,7 +20,7 @@ PRODUCT_RELEASE_NAME := n7100
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := n7100
-PRODUCT_NAME := slim_n7100
+PRODUCT_NAME := crom_n7100
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := GT-N7100
 PRODUCT_MANUFACTURER := samsung
