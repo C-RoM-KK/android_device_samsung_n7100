@@ -8,9 +8,6 @@ $(call inherit-product, device/samsung/n7100/full_n7100.mk)
 # Inherit some common CRoM stuff.
 $(call inherit-product, vendor/crom/config/common_phone.mk)
 
-# bootanimation
-PRODUCT_COPY_FILES += \
-    vendor/crom/prebuilt/common/media/xhdpi/BOOTANIMATION-1280x768.zip:system/media/bootanimation.zip
 
 PRODUCT_COPY_FILES +=  \
 #    device/samsung/n7100/69cpuinit:system/etc/init.d/69cpuinit
